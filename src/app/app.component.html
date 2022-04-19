@@ -9,18 +9,24 @@
 
   <div class="add-members-container">
     <input
-      #inputMemberInput
+      #memberNameInput
       type="text"
       placeholder="Name"
-      (input)="onInput(inputMemberInput.value)"
+      (input)="onInput(memberNameInput.value)"
       [value]="memberName"
     />
     <button (click)="addMember()">Add</button>
   </div>
 
   <div class="input-container">
-    <input type="text" placeholder="# of teams" />
-    <button>Generate</button>
+    <input
+      #teamNumberInput
+      type="number"
+      placeholder="# of teams"
+      (input)="onTeamNumberInput(teamNumberInput.value)"
+      [value]="numberOfTeams"
+    />
+    <button (click)="generateTeams()">Generate</button>
   </div>
 
   <p *ngIf="!!errorMessage" class="error-msg">{{ errorMessage }}</p>
