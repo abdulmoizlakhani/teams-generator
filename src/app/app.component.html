@@ -5,29 +5,38 @@
     <ul class="list">
       <li *ngFor="let member of members">{{ member }}</li>
     </ul>
+
+    <div class="add-members-container">
+      <input
+        #memberNameInput
+        type="text"
+        placeholder="Name"
+        (input)="onInput(memberNameInput.value)"
+        [value]="memberName"
+      />
+      <button class="ui blue button" (click)="addMember()">Add</button>
+    </div>
+
+    <div class="input-container">
+      <input
+        #teamNumberInput
+        type="number"
+        placeholder="# of teams"
+        (input)="onTeamNumberInput(teamNumberInput.value)"
+        [value]="numberOfTeams"
+      />
+      <button (click)="generateTeams()">Generate</button>
+    </div>
+
+    <p *ngIf="!!errorMessage" class="error-msg">{{ errorMessage }}</p>
   </div>
 
-  <div class="add-members-container">
-    <input
-      #memberNameInput
-      type="text"
-      placeholder="Name"
-      (input)="onInput(memberNameInput.value)"
-      [value]="memberName"
-    />
-    <button (click)="addMember()">Add</button>
+  <div *ngIf="!!teams.length" class="teams-container">
+    <div *ngFor="let team of teams; let i = index" class="team-container">
+      <h3>Team {{ i + 1 }}</h3>
+      <ul class="ui card">
+        <li *ngFor="let member of team">{{ member }}</li>
+      </ul>
+    </div>
   </div>
-
-  <div class="input-container">
-    <input
-      #teamNumberInput
-      type="number"
-      placeholder="# of teams"
-      (input)="onTeamNumberInput(teamNumberInput.value)"
-      [value]="numberOfTeams"
-    />
-    <button (click)="generateTeams()">Generate</button>
-  </div>
-
-  <p *ngIf="!!errorMessage" class="error-msg">{{ errorMessage }}</p>
 </div>

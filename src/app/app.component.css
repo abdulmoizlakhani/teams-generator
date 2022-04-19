@@ -65,3 +65,15 @@ li {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
+
+.team-container {
+  margin-bottom: 1rem;
+}
+
+.team-container ul {
+  padding: 0.75rem 1rem;
+}
+
+.team-container ul li {
+  margin: 0;
+}
