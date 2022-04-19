@@ -1,0 +1,11 @@
+.team-container {
+  margin-bottom: 1rem;
+}
+
+.team-container ul {
+  padding: 0.75rem 1rem;
+}
+
+.team-container ul li {
+  margin: 0;
+}

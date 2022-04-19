@@ -43,6 +43,7 @@ export class AppComponent {
       return;
     }
 
+    this.teams = [];
     const allMembers = [...this.members];
 
     while (allMembers.length) {
